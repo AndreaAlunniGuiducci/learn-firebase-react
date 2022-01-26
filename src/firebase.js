@@ -1,22 +1,21 @@
-// Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
 import { getFirestore } from "firebase/firestore";
-// TODO: Add SDKs for Firebase products that you want to use
-// https://firebase.google.com/docs/web/setup#available-libraries
 
-// Your web app's Firebase configuration
+// process.env.KEY - legge il valore di una chiave nel file .env
+// https://create-react-app.dev/docs/adding-custom-environment-variables/
+
 const firebaseConfig = {
-    apiKey: "AIzaSyAyVtSYM8YSMBx8ainike9DkBPubkQDd00",
-    authDomain: "learn-firebase-react-259e5.firebaseapp.com",
+    // apiKey: process.env.REACT_APP_API_KEY,
+    // authDomain: process.env.REACT_APP_AUTH_DOMAIN,
     projectId: "learn-firebase-react-259e5",
-    storageBucket: "learn-firebase-react-259e5.appspot.com",
-    messagingSenderId: "583124504664",
-    appId: "1:583124504664:web:58a4d628fc415dd4c1ba2d"
+    // storageBucket: process.env.REACT_STORAGE_BUCKET,
+    // messagingSenderId: process.env.REACT_APP_SENDER_ID,
+    appId: process.env.REACT_APP_ID,
 };
 
-// Initialize Firebase
-const firebase = initializeApp(firebaseConfig);
+initializeApp(firebaseConfig);
 
+// Riferimento al database
 const db = getFirestore();
 
 export { db };
